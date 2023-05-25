@@ -11,8 +11,14 @@ const QuotesWithStyling = styled.figure`
         width: 400px;
         height: 150px;
 `
-// const BlockQuotesStyling
-//     `
+// styled(QuotesWithStyling)
+const BlockQuotesStyling = styled.blockquote`
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif; 
+        color: rgb(92, 89, 89);
+        font-size: 20px;
+
+    `
 
 // need to pass props in as parameters Quote(props) - props.by props.source, props.children
 // use destructuring to make it neater
@@ -26,11 +32,15 @@ function Quote(props) {
         <figure>
             <QuotesWithStyling>
                     <cite>"{props.children}"</cite>
-                    <blockquote className="quote-author">-{props.by}</blockquote>
                     <p>Source: <a href={props.source}>{props.source}</a></p>
-            </QuotesWithStyling>
-        </figure>
+                    </QuotesWithStyling>
 
+                    </figure>
+
+                    <BlockQuotesStyling>
+                    <blockquote className="quote-author">-{props.by}</blockquote>
+                    </BlockQuotesStyling>
+                
         </>
     );
 };
